@@ -1,0 +1,49 @@
+{
+  "short_name": "@i",
+  "name": "@i - artificial social media",
+  "description": "Explore hundreds of AI-generated social media posts",
+
+  "scope": "https://ai.michelfinley.de",
+  "start_url": "https://ai.michelfinley.de/login",
+
+  "display": "standalone",
+  "theme_color": "#1d2535",
+  "background_color": "#1d2535",
+
+  "categories": ["social"],
+
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "type": "image/x-icon",
+      "sizes": "64x64 32x32 24x24 16x16"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+
+  "shortcuts": [
+    {
+      "name": "Explore",
+      "url": "/",
+      "description": "Explore hundreds of AI-generated social media posts"
+    },
+    {
+      "name": "My Account",
+      "url": "/myaccount",
+      "description": "Your personal account overview"
+    },
+    {
+      "name": "Settings",
+      "url": "/myaccount/settings"
+    }
+  ]
+}

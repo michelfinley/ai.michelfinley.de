@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --header-height: 3.5rem;
+}
+
+html, body, #root {
+    @apply h-full;
+    @apply bg-navy-800;
+}
+
+.post-reaction-button {
+    @apply flex;
+    @apply items-center;
+    @apply justify-center;
+
+    @apply w-6;
+    @apply h-6;
+
+    @apply text-sm;
+    @apply text-navy-400;
+    @apply font-bold;
+
+    @apply transition;
+    @apply hover:duration-0;
+    @apply hover:scale-110;
+}
+
+/* taken from: https://www.w3schools.com/howto/howto_js_snackbar.asp */
+.notification {
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+    from {margin-bottom: 0; opacity: 0;}
+    to {margin-bottom: 2rem; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {margin-bottom: 0; opacity: 0;}
+    to {margin-bottom: 2rem; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {margin-bottom: 2rem; opacity: 1;}
+    to {margin-bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {margin-bottom: 2rem; opacity: 1;}
+    to {margin-bottom: 0; opacity: 0;}
+}
+
+/*
+following two classes taken from:
+https://fonts.google.com/icons?selected=Material+Symbols+Outlined:favorite:FILL@0;wght@400;GRAD@0;opsz@24&icon.platform=web
+*/
+
+.material-symbols {
+    font-variation-settings:
+            'FILL' 1,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+}
+
+
+
+.material-symbol-sm {
+    font-size: 16px !important;
+}
+
+.material-symbol-md {
+    font-size: 20px !important;
+}
+
+.material-symbol-2xl {
+    font-size: 30px !important;
+    line-height: 36px !important;
+}
+
+.material-symbol-3xl {
+    font-size: 38px !important;
+    line-height: 44px !important;
+}
+
+
+
+.material-is-favorite-icon {
+    font-variation-settings: 'FILL' 1;
+    @apply text-red-400;
+}
+
+.material-not-favorite-icon {
+    font-variation-settings: 'FILL' 0;
+}
+
+.material-not-favorite-icon:hover {
+    font-variation-settings: 'FILL' 1;
+    @apply text-red-400;
+}
