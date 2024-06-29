@@ -25,8 +25,8 @@ const SignUpComponent = (): React.JSX.Element => {
                 "Content-Type": "application/json",
             }),
             body: JSON.stringify({
-                username: encodeURIComponent(username), email: encodeURIComponent(email),
-                password_hash: encodeURIComponent(password)
+                username: username, email: email,
+                password_hash: password
             }),
         }).then(([status, data]) => {
             if (status === 500) {
