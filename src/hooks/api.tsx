@@ -14,7 +14,7 @@ export interface APIArgs {
 }
 
 export async function api(url: string, params?: Object, args?: APIArgs): Promise<[number, any]> {
-    let full_url: string = "";
+    let full_url: string = "https://api.michelfinley.de";
 
     let url_param_list: string[] = [];
 

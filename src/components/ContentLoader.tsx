@@ -70,6 +70,9 @@ const ContentLoader = ({tag, user, favorites_only, filter, highlight}:
                         }
                     }
                 }
+            } else {
+                setLoadingFinished(true);
+                return;
             }
             setLoading(false);
             load = false;

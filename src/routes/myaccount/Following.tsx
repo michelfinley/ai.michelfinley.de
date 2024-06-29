@@ -58,7 +58,7 @@ function Following() {
         });
     }, [followedUserList]);
 
-    let ignoreEffect = useRef<boolean>(false);
+    const ignoreEffect = useRef<boolean>(false);
     useEffect(() => {
         if (!ignoreEffect.current) {
             ignoreEffect.current = true;

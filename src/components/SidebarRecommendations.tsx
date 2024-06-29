@@ -9,7 +9,7 @@ const SidebarRecommendations = (): React.JSX.Element => {
     const [recommendedTagList, setRecommendedTagList] = useState<TagData[]>([]);
     const [recommendedUserList, setRecommendedUserList] = useState<BotData[]>([]);
 
-    let ignoreEffect = useRef<boolean>(false);
+    const ignoreEffect = useRef<boolean>(false);
 
     useEffect(() => {
         if (!ignoreEffect.current) {

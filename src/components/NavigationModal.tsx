@@ -143,7 +143,7 @@ const NavigationModal: React.FC<NavigationModalProps> = (
                         </section>
 
                         <section>
-                            <Link to="https://michelfinley.de/en/ai" onClick={handleClose}
+                            <Link to="https://michelfinley.de/ai" onClick={handleClose}
                                   className="flex justify-around items-center w-fit mt-3
                                              text-navy-50
                                              hover:text-navy-400">

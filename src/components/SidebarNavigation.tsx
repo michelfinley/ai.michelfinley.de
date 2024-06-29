@@ -68,7 +68,7 @@ const SidebarNavigation = (): React.JSX.Element => {
                 </section>
 
                 <section>
-                    <Link to="https://michelfinley.de/en/ai"
+                    <Link to="https://michelfinley.de/ai"
                           className="flex justify-around items-center w-fit mt-12 mb-1
                                      text-navy-50
                                      hover:text-navy-400">

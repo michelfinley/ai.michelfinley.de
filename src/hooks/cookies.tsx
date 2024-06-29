@@ -5,6 +5,6 @@ export function getCookie(name: string): string {
 }
 
 export function setCookie(name: string, value: string): void {
-    document.cookie = `${name}=${value}; Path=/; SameSite=Strict`;
+    document.cookie = `${name}=${value}; Domain=ai.michelfinley.de; Path=/; SameSite=Strict`;
     return;
 }
