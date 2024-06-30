@@ -56,8 +56,11 @@ function Settings() {
             headers: new Headers({
                 "Content-Type": "application/json",
             }),
-            body: JSON.stringify({username: encodeURIComponent(data.input), password_hash: encodeURIComponent(data.password)}),
-        })
+            body: JSON.stringify({
+                username: data.input,
+                password_hash: data.password
+            }),
+        });
         if (status === 200) {
             updateAccountData();
             closeChangeUsernameModal();
@@ -86,8 +89,11 @@ function Settings() {
             headers: new Headers({
                 "Content-Type": "application/json",
             }),
-            body: JSON.stringify({email: encodeURIComponent(data.input), password_hash: encodeURIComponent(data.password)}),
-        })
+            body: JSON.stringify({
+                email: data.input,
+                password_hash: data.password
+            }),
+        });
         if (status === 200) {
             updateAccountData();
             closeChangeEmailModal();
@@ -120,8 +126,11 @@ function Settings() {
             headers: new Headers({
                 "Content-Type": "application/json",
             }),
-            body: JSON.stringify({new_password: encodeURIComponent(data.input), password_hash: encodeURIComponent(data.password)}),
-        })
+            body: JSON.stringify({
+                new_password: data.input,
+                password_hash: data.password
+            }),
+        });
         if (status === 200) {
             updateAccountData();
             closeChangePasswordModal();
@@ -145,7 +154,21 @@ function Settings() {
     };
 
     const submitDeleteAccountForm = async (data: SettingsModalData): Promise<[boolean, string]> => {
-        if (data.input === "DELETE") {
+        if (data.input !== "DELETE") {
+            return [false, "Type \"DELETE\" to confirm account deletion"];
+        }
+
+        const [status, response] = await api("/api/users/me", {}, {
+            method: "DELETE",
+            headers: new Headers({
+                "Content-Type": "application/json",
+            }),
+            body: JSON.stringify({
+                password_hash: data.password
+            }),
+        });
+        if (status === 200) {
+            updateAccountData();
             closeDeleteAccountModal();
 
             setToken(null);
@@ -154,10 +177,9 @@ function Settings() {
                 color: "bg-red-600 text-navy-50",
                 text: "Account deleted",
             });
-
             return [true, ""];
         } else {
-            return [false, "Type \"DELETE\" to confirm account deletion"];
+            return [false, response["detail"]];
         }
     };
 
